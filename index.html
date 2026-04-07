@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solana Spot Trading Bot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 40px auto;
+      line-height: 1.6;
+      padding: 0 20px;
+    }
+    h1, h2 {
+      color: #111;
+    }
+    .box {
+      background: #f5f5f5;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    code, pre {
+      background: #f0f0f0;
+      padding: 10px;
+      display: block;
+      overflow-x: auto;
+      border-radius: 6px;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Solana Spot Trading Bot (Python)</h1>
+
+  <p>
+    Python-based systematic trading bot for Solana spot markets, using trend-following and momentum signals on 4-hour candles.
+    The system is deployed on a VPS and tracked live via a CSV log of capital and trade decisions.
+  </p>
+
+  <h2>Key Facts</h2>
+  <div class="box">
+    <ul>
+      <li>Asset: SOLUSDT (Spot)</li>
+      <li>Strategy: Trend-following + Momentum</li>
+      <li>Timeframe: 4h</li>
+      <li>Data: ~7 years of historical Binance data</li>
+      <li>Deployment: VPS (24/7)</li>
+      <li>Execution: Paper trading</li>
+      <li>Live tracking: CSV log (capital + trades)</li>
+    </ul>
+  </div>
+
+  <h2>Strategy Overview</h2>
+  <p>The strategy combines:</p>
+  <ul>
+    <li>Trend filter: EMA crossover</li>
+    <li>Momentum confirmation: RSI filter</li>
+    <li>Entry: when trend and momentum align</li>
+    <li>Exit: when momentum weakens</li>
+  </ul>
+
+  <h2>Dataset</h2>
+  <div class="box">
+    <ul>
+      <li>Source: Binance Spot</li>
+      <li>Timeframe: 4h candles</li>
+      <li>History length: ~7 years</li>
+      <li>Asset: Solana (SOLUSDT)</li>
+    </ul>
+  </div>
+
+  <h2>Backtest Results</h2>
+  <div class="box">
+    <ul>
+      <li>Total Return: +341%</li>
+      <li>CAGR: ~30% / year</li>
+      <li>Max Drawdown: -57%</li>
+      <li>Sharpe Ratio: ~0.7</li>
+      <li>Number of Trades: 512</li>
+      <li>Win Rate: ~43%</li>
+    </ul>
+  </div>
+
+  <h2>Equity Curve</h2>
+  <img src="equity_curve.png" alt="Equity Curve">
+
+  <h2>Live Deployment</h2>
+  <div class="box">
+    <ul>
+      <li>Launch Date: 2026-04-07</li>
+      <li>Environment: VPS (Linux)</li>
+      <li>Execution: Paper trading</li>
+      <li>Logging: CSV output (capital, trades, timestamps)</li>
+    </ul>
+  </div>
+
+  <h2>Code Snippet</h2>
+  <pre>
+if ema21 > ema50 and rsi > 55:
+    signal = "LONG"
+elif ema21 < ema50 and rsi < 45:
+    signal = "SHORT"
+  </pre>
+
+  <h2>Limitations</h2>
+  <ul>
+    <li>Backtest does not include full slippage or market impact</li>
+    <li>Performance may vary across market regimes</li>
+    <li>Current deployment is paper trading</li>
+  </ul>
+</body>
+</html>
