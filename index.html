@@ -44,7 +44,23 @@ The goal was to better understand how systematic trading strategies work in prac
 </p>
 
 ---
+<h2>Live SOL Price</h2>
+<div id="sol-price">Loading...</div>
 
+<script>
+  const el = document.getElementById("sol-price");
+  const ws = new WebSocket("wss://stream.binance.com:9443/ws/solusdt@trade");
+
+  ws.onmessage = (event) => {
+    const data = JSON.parse(event.data);
+    el.textContent = "SOLUSDT: " + Number(data.p).toFixed(2) + " USDT";
+  };
+
+  ws.onerror = () => {
+    el.textContent = "Live price unavailable";
+  };
+</script>
+  
 <h2>How it works</h2>
 
 <div class="box">
