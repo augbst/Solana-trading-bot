@@ -2,17 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Solana Spot Trading Bot</title>
+  <title>Solana Trading Bot</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      max-width: 900px;
+      font-family: Arial;
+      max-width: 700px;
       margin: 40px auto;
       line-height: 1.6;
       padding: 0 20px;
     }
-    h1, h2 {
+    h1 {
       color: #111;
     }
     .box {
@@ -21,97 +20,106 @@
       border-radius: 8px;
       margin-bottom: 20px;
     }
-    code, pre {
-      background: #f0f0f0;
-      padding: 10px;
-      display: block;
-      overflow-x: auto;
-      border-radius: 6px;
-    }
-    img {
-      max-width: 100%;
-      border-radius: 8px;
-    }
   </style>
 </head>
+
 <body>
-  <h1>Solana Spot Trading Bot (Python)</h1>
 
-  <p>
-    Python-based systematic trading bot for Solana spot markets, using trend-following and momentum signals on 4-hour candles.
-    The system is deployed on a VPS and tracked live via a CSV log of capital and trade decisions.
-  </p>
+<h1>Solana Trading Bot</h1>
 
-  <h2>Key Facts</h2>
-  <div class="box">
-    <ul>
-      <li>Asset: SOLUSDT (Spot)</li>
-      <li>Strategy: Trend-following + Momentum</li>
-      <li>Timeframe: 4h</li>
-      <li>Data: ~7 years of historical Binance data</li>
-      <li>Deployment: VPS (24/7)</li>
-      <li>Execution: Paper trading</li>
-      <li>Live tracking: CSV log (capital + trades)</li>
-    </ul>
-  </div>
+<p>
+Personal project: development of a simple trading system for the cryptocurrency market.
+</p>
 
-  <h2>Strategy Overview</h2>
-  <p>The strategy combines:</p>
-  <ul>
-    <li>Trend filter: EMA crossover</li>
-    <li>Momentum confirmation: RSI filter</li>
-    <li>Entry: when trend and momentum align</li>
-    <li>Exit: when momentum weakens</li>
-  </ul>
+---
 
-  <h2>Dataset</h2>
-  <div class="box">
-    <ul>
-      <li>Source: Binance Spot</li>
-      <li>Timeframe: 4h candles</li>
-      <li>History length: ~7 years</li>
-      <li>Asset: Solana (SOLUSDT)</li>
-    </ul>
-  </div>
+<h2>Overview</h2>
 
-  <h2>Backtest Results</h2>
-  <div class="box">
-    <ul>
-      <li>Total Return: +341%</li>
-      <li>CAGR: ~30% / year</li>
-      <li>Max Drawdown: -57%</li>
-      <li>Sharpe Ratio: ~0.7</li>
-      <li>Number of Trades: 512</li>
-      <li>Win Rate: ~43%</li>
-    </ul>
-  </div>
+<p>
+I built a Python-based trading bot that analyzes the price of Solana and generates buy and sell signals.
+</p>
 
-  <h2>Equity Curve</h2>
-  <img src="equity_curve.png" alt="Equity Curve">
+<p>
+The goal was to better understand how systematic trading strategies work in practice.
+</p>
 
-  <h2>Live Deployment</h2>
-  <div class="box">
-    <ul>
-      <li>Launch Date: 2026-04-07</li>
-      <li>Environment: VPS (Linux)</li>
-      <li>Execution: Paper trading</li>
-      <li>Logging: CSV output (capital, trades, timestamps)</li>
-    </ul>
-  </div>
+---
 
-  <h2>Code Snippet</h2>
-  <pre>
-if ema21 > ema50 and rsi > 55:
-    signal = "LONG"
-elif ema21 < ema50 and rsi < 45:
-    signal = "SHORT"
-  </pre>
+<h2>How it works</h2>
 
-  <h2>Limitations</h2>
-  <ul>
-    <li>Backtest does not include full slippage or market impact</li>
-    <li>Performance may vary across market regimes</li>
-    <li>Current deployment is paper trading</li>
-  </ul>
+<div class="box">
+<ul>
+<li>Looks at price trends</li>
+<li>Uses simple indicators (moving averages and momentum)</li>
+<li>Generates buy / sell signals</li>
+<li>Tracks capital evolution over time</li>
+</ul>
+</div>
+
+---
+
+<h2>Key information</h2>
+
+<div class="box">
+<ul>
+<li>Asset: Solana (SOL)</li>
+<li>Market: Spot</li>
+<li>Timeframe: 4 hours</li>
+<li>Data: ~7 years of historical data</li>
+<li>Execution: Paper trading (no real money)</li>
+<li>Runs continuously on a VPS</li>
+</ul>
+</div>
+
+---
+
+<h2>Results (Backtest)</h2>
+
+<div class="box">
+<ul>
+<li>Total return: +341%</li>
+<li>Average annual return: ~30%</li>
+<li>Drawdown: -57%</li>
+</ul>
+</div>
+
+---
+
+<h2>Live tracking</h2>
+
+<p>
+The bot is currently running and records its decisions and capital in a CSV file.
+</p>
+
+<p>
+This allows me to track its behavior in real market conditions.
+</p>
+
+---
+
+<h2>Example output</h2>
+
+<div class="box">
+<pre>
+Date        Action    Price    Capital
+2026-04-07  BUY       142      100
+2026-04-08  SELL      145      103
+</pre>
+</div>
+
+---
+
+<h2>Conclusion</h2>
+
+<p>
+This project helped me understand how trading strategies are designed, tested, and monitored in real conditions.
+</p>
+
+<p>
+It also reflects my interest in financial markets and data-driven decision making.
+</p>
+
+---
+
 </body>
 </html>
